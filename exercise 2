@@ -1,0 +1,79 @@
+import React from 'react';
+import {View, Text, Image, TextInput, StyleSheet, useWindowDimensions} from 'react-native';
+
+const App = () => {
+  const {height} = useWindowDimensions();
+
+  const imageStyle = {
+    width: 300,
+    height: 350,
+    resizeMode: 'cover',
+    position: 'absolute',
+    top: 50, 
+    left: 30,
+    right: 0, 
+  };
+
+  return (
+    <View style={styles.container}>
+      <View style={styles.rowContainer}>
+        <Image
+          source={{uri: 'https://i.pinimg.com/564x/13/da/bf/13dabf96f12020dfc5f46e1f50702ff3.jpg'}}
+          style={imageStyle}
+        />
+      </View>
+      <Text
+        style={styles.textStyle}
+        allowFontScaling={false}>
+          hiiIIi Come a Little Closer
+      </Text>
+      
+      <View style={[styles.textInputContainer, {bottom: 0}]}>
+        <TextInput
+          style={styles.inputStyle}
+          placeholder="Type Here"
+          placeholderTextColor="white"
+        />
+      </View>
+    </View>
+  );
+};
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    justifyContent: 'space-between',
+    paddingHorizontal: 20,
+    backgroundColor: 'red', 
+  },
+  rowContainer: {
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  textStyle: {
+    color: 'white',
+    fontSize: 24,
+    textAlign: 'center',
+    textAlignVertical: 'center',
+    position: 'absolute',
+    top: 400, 
+    left: 0,
+    right: 0,
+
+  },
+  textInputContainer: {
+    alignItems: 'center',
+    justifyContent: 'center',
+    marginBottom: 10,
+  },
+  inputStyle: {
+    height: 70,
+    borderColor: 'white',
+    borderWidth: 3,
+    paddingLeft: 150,
+    paddingRight: 150,
+    color: 'white'
+  },
+});
+
+export default App;
